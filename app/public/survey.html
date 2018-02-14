@@ -15,13 +15,13 @@
 		<div class="row">
 			<h2>About you</h2>
 			<form>
-				Name (required) <br><input type="text" name="user-name"><br>
-				Link to photo image (required) <br><input type="text" name="user-photo-link"><br>
+				Name (required) <br><input type="text" id="user-name"><br>
+				Link to photo image (required) <br><input type="text" id="user-photo-link"><br>
 			</form>
 		<div>
 		<hr>
 		1: Your mind is always buzzing with unexplored ideas and plans.<br>
-		<select name="q1">
+		<select id="q1">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -32,7 +32,7 @@
 		<br>
 
 		2: Generally speaking, you rely more on your experience than your imagination.<br>
-		<select name="q2">
+		<select id="q2">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -43,7 +43,7 @@
 		<br>
 
 		3: You find it easy to stay relaxed and focused even when there is some pressure.<br>
-		<select name="q3">
+		<select id="q3">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -54,7 +54,7 @@
 		<br>
 
 		4: You rarely do something just out of sheer curiosity.<br>
-		<select name="q4">
+		<select id="q4">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -65,7 +65,7 @@
 		<br>
 
 		5: People can rarely upset you.<br>
-		<select name="q5">
+		<select id="q5">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -76,7 +76,7 @@
 		<br>
 
 		6: It is often difficult for you to relate to other people’s feelings.<br>
-		<select name="q6">
+		<select id="q6">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -87,7 +87,7 @@
 		<br>
 
 		7: In a discussion, truth should be more important than people’s sensitivities.<br>
-		<select name="q7">
+		<select id="q7">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -98,7 +98,7 @@
 		<br>
 
 		8: You rarely get carried away by fantasies and ideas.<br>
-		<select name="q8">
+		<select id="q8">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -109,7 +109,7 @@
 		<br>
 
 		9: You think that everyone’s views should be respected regardless of whether they are supported by facts or not.<br>
-		<select name="q9">
+		<select id="q9">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -120,7 +120,7 @@
 		<br>
 
 		10: You feel more energetic after spending time with a group of people.<br>
-		<select name="q10">
+		<select id="q10">
 			<option></option>
 			<option value="1">1 (Strongly disagree)</option>
 			<option value="2">2</option>
@@ -131,12 +131,49 @@
 		<br>
 
 
+		<br>
 
 
+		
 
-		<br><br><br>
-
-		<a href="/survey.html"><button type="button" id="startSurvey">Take the survey!</button></a>
+		<button type="submit" class="submit">Submit survey!</button><br><br><br>
 	</div>
 </body>
 </html>
+
+<script type="text/javascript">
+	$(".submit").on("click", function(event) {
+		event.preventDefault();
+
+		var newFriend = {
+			friendName: $("#user-name").val().trim(),
+			friendPhotoLink:$("#user-photo-link").val().trim(),
+			scores:[
+				$("#q1").val().trim(),
+				$("#q2").val().trim(),
+				$("#q3").val().trim(),
+				$("#q4").val().trim(),
+				$("#q5").val().trim(),
+				$("#q6").val().trim(),
+				$("#q7").val().trim(),
+				$("#q8").val().trim(),
+				$("#q9").val().trim(),
+				$("#q10").val().trim()
+			]
+		};
+
+		console.log(newFriend);
+
+		$.post("api/friends", newFriend,
+			function(data) {
+				if (data) {
+					alert("Friend data submitted!");
+				}
+
+				else {
+					alert("You have no friends :(");
+				}
+			});
+	});
+
+</script>
