@@ -4,7 +4,7 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
 	<title>Friend Finder! Take the survey!</title>
 </head>
 <body>
@@ -164,16 +164,23 @@
 
 		console.log(newFriend);
 
-		$.post("api/friends", newFriend,
-			function(data) {
-				if (data) {
-					alert("Friend data submitted!");
-				}
+		var success = function(data) {
+			if (data) {
+				alert("Friend data submitted!");
+				console.log("friendData");
+			} else {
+				alert("You have no friends :(");
+			}
+		};
 
-				else {
-					alert("You have no friends :(");
-				}
-			});
+		$.ajax({
+		  type: "POST",
+		  url: "api/friends",
+		  contentType: "application/json",
+		  data: JSON.stringify(newFriend),
+		  success: success,
+		});
+
 	});
 
 </script>
