@@ -10,7 +10,6 @@ module.exports = function(app) {
 		var data =  req.body;
 
 		var userScores = data.scores;
-		console.log("userScores", userScores);
 
 		// array to hold all score differences
 		var diffArray = [];
@@ -33,30 +32,35 @@ module.exports = function(app) {
 			diffArray.push(totalDiff);
 		}
 
-		console.log("diffArray",diffArray);
+		// finds the min difference in the array of differences
+		// and returns the index of the best match
 		bestFriendIndex = -1; 
 		bestFriendIndex = diffArray.indexOf(Math.min(...diffArray));
 
-		console.log("bestFriendIndex",bestFriendIndex);
+		bestFriend = friendData[bestFriendIndex];
+
+		// var modal = $(".modal");
+		// var modalContent = $(".modal-content");
+		// var submitButton = $(".submit");
+		// var modalClose = $(".modal-close");
+
+		// submitButton.on("click", function(event) {
+		// 	event.preventDefault();
+
+		// 	modalContent.append("Your best match is: " + bestFriend.friendName);
+		// 	modalContent.append("<img src='" + bestFriend.FriendPhotoLink + "'");
+
+		// 	modal.style.display = "block";
+		// });
+
+		// modalClose.on("click", function(event) {
+		// 	event.preventDefault();
+		// 	modal.style.display	= "none";
+		// });
 
 
+		// adds current user to the database of friends
 		friendData.push(req.body);
-		console.log("data", data);
-		console.log("friendData", friendData);
 		res.json(true);
-
-		// var answerArray = [];
-		// for (j = 0; j < req.body.scores[])
-
-		// console.log("req.body.scores", req.body([scores[]]));
-
-		// var closestFriend = '';
-
-		// console.log("friendData", friendData);
-		// for (i = 0; i < friendData.length; i++) {
-		// 	// console.log("friendData[i]", friendData[i].friendName);
-		// 	var scoreArray  = [];
-		// }
-		
 	});
 };

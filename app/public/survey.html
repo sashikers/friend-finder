@@ -11,6 +11,7 @@
 	<div class="jumbotron">
 		<h1>Friend Finder! Survey</h1>
 	</div>
+	<!-- <div class="mmodal">CANA</div> -->
 	<div class="container">
 		<div class="row">
 			<h2>About you</h2>
@@ -133,17 +134,39 @@
 
 		<br>
 
-
-		
-
 		<button type="submit" class="submit">Submit survey!</button><br><br><br>
 	</div>
+
+	<!-- modal -->
+	<!-- <div class="container"> -->
+		<div id="best-friend-modal" class="mmodal">
+			<div class="modal-content">
+				<span class="modal-close">Close</span>
+
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				HIIIIIIIIIIIIIIIIIIII
+				
+			</div>
+		</div>
+	<!-- </div> -->
+
 </body>
 </html>
 
 <script type="text/javascript">
 	$(".submit").on("click", function(event) {
 		event.preventDefault();
+
+		// var modal = $(".mmodal");
+		$(".mmodal").css('display',"block");
 
 		var newFriend = {
 			friendName: $("#user-name").val().trim(),
@@ -181,6 +204,11 @@
 		  success: success,
 		});
 
+	});
+
+	$(".modal-close").on("click", function(event) {
+		event.preventDefault();
+		$(".mmodal").css("display", "none");
 	});
 
 </script>

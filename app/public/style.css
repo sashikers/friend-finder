@@ -55,3 +55,34 @@ a:link {
 	text-decoration: none;
 	color: #AD343E;
 }
+
+
+
+
+
+/*modal*/
+.mmodal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	/*width: 100%;*/
+	/*height: 50%;*/
+	overflow: auto;
+	background-color: #AD343E;
+	margin: 20%;
+}
+.modal-content {
+	background-color: #E0E0CE;
+	margin: 5%;
+	padding: 20px;
+	border: 2px solid #F2AF29;
+	width: 90%;
+}
+.modal-close {
+	color: #474747;
+	float: right;
+	font-size: 15px;
+	font-weight: bold;
+}
