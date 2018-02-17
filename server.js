@@ -11,6 +11,11 @@ console.log(PORT);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(function(req,res,next){
+	console.log(req.url);
+	next();
+})
+
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 // app.use(express.static(path.join(__dirname, "/app/public/style.css")));

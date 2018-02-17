@@ -3,7 +3,7 @@ var express = require("express");
 
 module.exports = function(app) {
 
-	app.get(express.static(path.join(__dirname, "../public/style.css")));
+	// app.get(express.static(path.join(__dirname, "../public/style.css")));
 
 	app.get("/survey", function(req, res) {
 		res.sendFile(path.join(__dirname, "../public/survey.html"));
@@ -13,5 +13,5 @@ module.exports = function(app) {
 		res.sendFile(path.join(__dirname, "../public/home.html"));
 	});
 
-	// app.get('/style.css', express.static(path.join(__dirname, "../public/style.css")));
+	app.use('/', express.static(path.join(__dirname, "../public/")));
 };
