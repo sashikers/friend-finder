@@ -14,6 +14,22 @@ var friendsArray = [
 			1,
 			2
 		]
+	},
+	{
+		friendName: "Sasha",
+		friendPhotoLink: "http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/4d/gk/p04dgkm4.jpg",
+		scores:[
+			1,
+			4,
+			3,
+			4,
+			5,
+			4,
+			5,
+			1,
+			1,
+			4
+		]
 	}
 ];
 
