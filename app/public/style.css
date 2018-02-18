@@ -65,9 +65,9 @@ a:link {
 	display: none;
 	position: fixed;
 	z-index: 1;
-	left: 0;
+	left: 50;
 	top: 0;
-	/*width: 100%;*/
+	width: 400px;
 	/*height: 50%;*/
 	overflow: auto;
 	background-color: #AD343E;
@@ -85,4 +85,11 @@ a:link {
 	float: right;
 	font-size: 15px;
 	font-weight: bold;
+}
+
+img {
+	width: 150px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }

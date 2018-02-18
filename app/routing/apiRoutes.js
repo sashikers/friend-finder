@@ -7,7 +7,9 @@ module.exports = function(app) {
 	});
 
 	app.post("/api/friends", function (req, res) {
-		var data =  req.body;
+		// console.log("req", req);
+
+		var data = req.body;
 
 		var userScores = data.scores;
 
@@ -38,6 +40,11 @@ module.exports = function(app) {
 		bestFriendIndex = diffArray.indexOf(Math.min(...diffArray));
 
 		bestFriend = friendData[bestFriendIndex];
+		data.bestFriendName = bestFriend.friendName;
+		data.bestFriendPhotoLink = bestFriend.friendPhotoLink;
+
+		// $(".modal-content").append("helloooooooooooooooooooooooooooo");
+		// $(".jumbotron").append("helloooooooooooooooooooooooooooo");
 
 		// var modal = $(".modal");
 		// var modalContent = $(".modal-content");
@@ -60,7 +67,7 @@ module.exports = function(app) {
 
 
 		// adds current user to the database of friends
-		friendData.push(req.body);
+		friendData.push(data);
 		res.json(true);
 	});
 };
