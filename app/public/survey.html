@@ -176,18 +176,30 @@
 
 		var success = function(data) {
 			if (data) {
-				// alert("Friend data submitted!");
 				console.log("friendData");
-				// $(".mmodal").css('display',"block");
 
+				// populates modal with best friend info for the most recent user (current user)
 				$.get("/api/friends", function(data) {
-					// var totalUsers = data.length;
 					var currentUser = data[data.length - 1];
-					console.log("currentUser", currentUser);
 					$(".modal-content").append("<h3>Congratulations! <br>Your best friend is: " + currentUser.bestFriendName + "!</h3>");
 					$(".modal-content").append("<img src='" + currentUser.bestFriendPhotoLink + "'>");
 
+					// displays modal
 					$(".mmodal").css('display',"block");
+
+					// empties out the submission form
+					$("#user-name").val("");
+					$("#user-photo-link").val("");
+					$("#q1").val("");
+					$("#q2").val("");
+					$("#q3").val("");
+					$("#q4").val("");
+					$("#q5").val("");
+					$("#q6").val("");
+					$("#q7").val("");
+					$("#q8").val("");
+					$("#q9").val("");
+					$("#q10").val("");
 				});
 
 			} else {
@@ -205,11 +217,11 @@
 
 	});
 
-
 	// closes modal
 	$(".modal-close").on("click", function(event) {
 		event.preventDefault();
 		$(".mmodal").css("display", "none");
+		$(".modal-content").empty();
 	});
 
 </script>
