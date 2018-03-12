@@ -13,13 +13,13 @@ Application is also deployed to [Heroku](https://friend-finder-20171023.herokuap
 
 ### Program 
 User first sees the welcome screen
-![Initial splash screen](public/images/intro.png)
+![Initial splash screen](app/public/images/intro.png)
 
 Survey begins
-![Survey begins](public/images/survey_start.png)
+![Survey begins](app/public/images/survey_start.png)
 
 User completes the survey
-![Survey complete](public/images/survey_complete.png)
+![Survey complete](app/public/images/survey_complete.png)
 
 User receives his best friend match and the survey is emptied for the next friend seeker
-![Survey complete](public/images/survey_result.png)
+![Survey complete](app/public/images/survey_result.png)
