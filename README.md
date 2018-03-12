@@ -1,17 +1,17 @@
 # friend-finder
 
-###Overview
+### Overview
 An application where a user takes a survey and gets matched up with a friend in the database based on responses given. 
 
 Application utilizes Node.js and Express.
 Application is also deployed to [Heroku](https://friend-finder-20171023.herokuapp.com/). 
 
-###Installation 
+### Installation 
 1. Clone directory to a local folder via `git clone https://github.com/sashikers/friend-finder.git`. 
 2. Install necessary libraries via `npm install`. 
 3. Run the application via `node server.js`. 
 
-###Program 
+### Program 
 User first sees the welcome screen
 ![Initial splash screen](public/images/intro.png)
 
